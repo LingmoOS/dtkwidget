@@ -1,0 +1,5 @@
+usr/lib/*/libdtkwidget.so
+usr/include/dtk5/
+usr/lib/*/pkgconfig/dtkwidget.pc
+usr/lib/*/cmake/DtkWidget/
+usr/lib/*/qt5/mkspecs/modules/*

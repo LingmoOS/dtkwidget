@@ -1,0 +1,11 @@
+prefix=@CMAKE_INSTALL_PREFIX@
+exec_prefix=${prefix}
+libdir=${prefix}/@LIBRARY_INSTALL_DIR@
+includedir=${prefix}/@INCLUDE_INSTALL_DIR@
+
+Name: Dtk@DTK_NAME_SUFFIX@Widget
+Description: Deepin Tool Kit Widget library
+Version: @DTK_VERSION@
+Libs: -L${libdir} -ldtk@DTK_NAME_SUFFIX@widget
+Cflags: -I${includedir}
+Requires: dtk@DTK_NAME_SUFFIX@core dtk@DTK_NAME_SUFFIX@gui Qt@QT_VERSION_MAJOR@Core Qt@QT_VERSION_MAJOR@Widgets Qt@QT_VERSION_MAJOR@DBus Qt@QT_VERSION_MAJOR@Network Qt@QT_VERSION_MAJOR@PrintSupport
