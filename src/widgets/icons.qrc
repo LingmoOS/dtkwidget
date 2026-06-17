@@ -8,7 +8,8 @@
         <file>assets/images/arrow_left_press.png</file>
         <file>assets/images/arrow_left_normal.png</file>
         <file>assets/images/arrow_left_hover.png</file>
-        <file>assets/images/deepin-logo.svg</file>
+        <file>assets/images/lingmo-logo.svg</file>
+        <file>assets/images/logo.svg</file>
         <file>assets/images/dialog_close_round_hover@2x.png</file>
         <file>assets/images/dialog_close_round_hover.png</file>
         <file>assets/images/dialog_close_round_press@2x.png</file>
@@ -17,7 +18,6 @@
         <file>assets/images/dialog_close_round_press.png</file>
         <file>assets/images/water_back.svg</file>
         <file>assets/images/water_front.svg</file>
-        <file>assets/images/uos.svg</file>
         <file>assets/icons/light/icons/water_back_383px.svg</file>
         <file>assets/icons/light/icons/water_front_383px.svg</file>
     </qresource>
