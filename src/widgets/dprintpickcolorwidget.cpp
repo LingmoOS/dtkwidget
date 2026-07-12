@@ -153,7 +153,7 @@ void DPrintPickColorWidget::initConnection()
 
     connect(pickColorBtn, &DPushButton::clicked, this, [=] {
         if (!pinterface) {
-            pinterface = new QDBusInterface("com.deepin.Picker", "/com/deepin/Picker", "com.deepin.Picker", QDBusConnection::sessionBus());
+            pinterface = new QDBusInterface("com.lingmo.Picker", "/com/lingmo/Picker", "com.lingmo.Picker", QDBusConnection::sessionBus());
             connect(pinterface, SIGNAL(colorPicked(QString, QString)), this, SLOT(slotColorPick(QString, QString)));
         }
 

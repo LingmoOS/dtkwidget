@@ -217,7 +217,7 @@ bool DApplicationPrivate::setSingleInstanceBySemaphore(const QString &key)
   \internal
   \brief DApplicationPrivate::setSingleInstanceByDbus will check singleinstance by
   register dbus service
-  \a key is the last of dbus service name, like "com.deepin.SingleInstance.key"
+  \a key is the last of dbus service name, like "com.lingmo.SingleInstance.key"
   \return
 */
 bool DApplicationPrivate::setSingleInstanceByDbus(const QString &key)
@@ -829,9 +829,9 @@ void DApplication::registerDDESession()
 
     if (!cookie.isEmpty()) {
         DDBusSender()
-                .service("com.deepin.SessionManager")
+                .service("com.lingmo.SessionManager")
                 .path("/com/deepin/SessionManager")
-                .interface("com.deepin.SessionManager")
+                .interface("com.lingmo.SessionManager")
                 .method("Register")
                 .arg(QString(cookie))
                 .call();
