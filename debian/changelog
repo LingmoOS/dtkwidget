@@ -1,3 +1,15 @@
+dtkwidget (6.7.43.lingmo.1) unstable; urgency=medium
+
+  * fix(DSwitchButton): 统一状态与图标的映射
+    三处代码对"checked 时该用哪个 DCI 图标"的映射不一致：
+    点击（toggled 处理器）用 checked ? switch_on : switch_off（正确），
+    而 initPlayer()（控件初始化、切换主题时）与 checkStateSet()（程序化
+    setChecked()）都写成了 !checked ? switch_on : switch_off。结果是控件刚创建、
+    换主题之后、以及代码里设置状态时，开关图形/动画显示的是相反的一侧。
+    现统一为 checked ? switch_on : switch_off。
+
+ -- Lingmo OS Team <team@lingmo.org>  Thu, 15 Oct 2026 20:09:16 +0800
+
 dtkwidget (6.7.42.lingmo.1) unstable; urgency=medium
 
   * Release 6.7.42.

@@ -103,7 +103,9 @@ void DSwitchButton::checkStateSet()
         return;
 
     d->checked = isChecked();
-    DDciIcon icon = !d->checked ? DDciIcon::fromTheme("switch_on") : DDciIcon::fromTheme("switch_off");
+    // 与 toggled 处理器一致：程序化 setChecked() 也要得到正确一侧的图标。
+    // 原实现同样写反，导致代码里设置状态与用户点击得到的图形相反。
+    DDciIcon icon = d->checked ? DDciIcon::fromTheme("switch_on") : DDciIcon::fromTheme("switch_off");
     d->player.setIcon(icon);
 }
 
@@ -137,7 +139,10 @@ void DSwitchButtonPrivate::init()
     }
 
     auto initPlayer= [this, q]() {
-        DDciIcon icon = !checked ? DDciIcon::fromTheme("switch_on") : DDciIcon::fromTheme("switch_off");
+        // 与 toggled 处理器保持同一套映射：开 -> switch_on，关 -> switch_off。
+        // 原来这里写反了（!checked ? on : off），于是控件刚创建、以及切换主题之后，
+        // 同一个状态会加载到与点击路径相反的图标（开关图形/动画显示错误的一侧）。
+        DDciIcon icon = checked ? DDciIcon::fromTheme("switch_on") : DDciIcon::fromTheme("switch_off");
         player.setIcon(icon);
         player.setMode(DDciIcon::Mode::Normal);
         auto palette = DDciIconPalette::fromQPalette(q->palette());
